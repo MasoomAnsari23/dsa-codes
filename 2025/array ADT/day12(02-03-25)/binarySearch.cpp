@@ -31,8 +31,8 @@ int binarySerach(struct Array arr, int key){
 }
 
 int main(){
-    struct Array arr={{3,5,7,9,2},10,5};
-
-   cout<<"binarysearch at index "<<binarySerach(arr,2)<<endl;
+    struct Array arr={{3,5,7,9,12},10,5};
+//binary search must be sorted
+   cout<<"binarysearch at index "<<binarySerach(arr,5)<<endl;
     display(arr);
 }
