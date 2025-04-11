@@ -67,11 +67,22 @@ void Reverse2(struct Node *p){
  first=q;
 }
 
+//reversing by recurssion
+void Reverse3(struct Node *q, struct Node *p){
+    if(p){
+        Reverse3(p,p->next);
+        p->next=q;
+    }
+    else
+    first=q;
+}
+
 int main(){
     int A[]={2,4,6,8,10};
     create(A,5);
     // Reverse1(first,5);
-    Reverse2(first);
+    // Reverse2(first);
+    Reverse3(NULL,first);
     display(first);
     return 0;
 }
