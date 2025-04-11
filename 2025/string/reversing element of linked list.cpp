@@ -53,10 +53,25 @@ void Reverse1(struct Node *p, int n){
   delete[] A;
 }
 
+//reversing by changing link
+void Reverse2(struct Node *p){
+ struct Node *q=NULL;
+ struct Node *r=NULL;
+
+ while(p!=NULL){
+    r=q;
+    q=p;
+    p=p->next;
+    q->next=r;
+ }
+ first=q;
+}
+
 int main(){
     int A[]={2,4,6,8,10};
     create(A,5);
-    Reverse1(first,5);
+    // Reverse1(first,5);
+    Reverse2(first);
     display(first);
     return 0;
 }
