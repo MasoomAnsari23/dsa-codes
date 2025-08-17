@@ -28,13 +28,25 @@ void merge(int A[], int l, int mid, int h){
          }
     }
 
+//reccurssive function
+void RmergeSort(int A[], int l, int h){
+    int mid;
+    if(l<h){
+        mid=(l+h)/2;
+        RmergeSort(A,l,mid);
+        RmergeSort(A,mid+1,h);
+        merge(A,l,mid,h);
+    }
+}
+
 
 int main(){
     int A[]={2,4,6,8,12,14,3,5,7,9};
     int n = sizeof(A)/sizeof(A[0]);
 
    cout<<"array after merging ";
-   mergeSort(A,0,n-1);
+   //mergeSort(A,0,n-1);
+   RmergeSort(A,0,n-1);
 
    for(int i=0; i<n; i++){
     cout<<A[i]<<" ";
